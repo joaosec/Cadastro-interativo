@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppons:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: url(/assets/images/conrad-ziebland-agE97zp_Xvo-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    animation: animateBg 5s linear infinite;
+
+}
+
+/*@keyframes animateBg{
+    100% {
+        filter: hue-rotate(300deg);
+    }
+}*/
+
+.flip-container {
+    position: relative;
+    width: 400px;
+    right: 0%;
+    height: 450px;
+    background: transparent;
+    border: 2px solid rgba(81, 77, 77, 0.342);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+}
+
+h2 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 310px;
+    margin: 30px 0;
+    border-bottom: 2px solid #fff;
+    left: 10%;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: .6s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    line-height: 57px;
+}
+
+
+.remember-forgot {
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    left: 50%;
+}
+
+.remember-forgot label input {
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+button {
+    position: relative;
+    width: 40%;
+    height: 40px;
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: transparent;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    left: 0%;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+button:hover {
+    background: transparent;
+    box-shadow: 0 0 30px 5px rgb(198, 181, 181);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+button:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+
+  .register-link  {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+  }
+  .register-link a {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+  }
+
+  .register-link p {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+  } 
+
+  .register-link p a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+  }
+
+ 
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .rotating {
+    animation: rotate 1s linear infinite;
+  }
+
+  .flip-container {
+    perspective: 1000px;
+}
+
+.flip-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.flip-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-inner.register {
+    transform: rotateY(180deg);
+}
+
+.register-form {
+    display: none;
+    transform: rotateY(0deg);
+}
+
+.register-form.active {
+    display: block;
+    transform: rotateY(0deg);
+}
+
+
+@media (max-width: 360px) {
+    section {
+        justify-content: flex-end; 
+        height: 100vh; 
+    }
+
+    .flip-container {
+        width: 100%;
+        max-width: 100%; 
+        height: 100%; 
+        backdrop-filter: blur(15px); 
+        margin: 0; 
+        border: none; 
+        border-radius: 0; 
+    }
+
+    .input-box {
+        width: 80%; 
+    }
+
+    .remember-forgot {
+        margin: 10px 0 15px;
+    }
+}
